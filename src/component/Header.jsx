@@ -1,0 +1,20 @@
+import { useState } from "react";
+
+export default function Header() {
+
+    const [show, setShow] = useState(true);
+    if (!show) return null;
+    return (
+        <header className="bg-white shadow">
+            <div className="relative flex items-center justify-center bg-blue-700 px-2 py-2 text-white">
+                <p className="text-sm text-center">
+                    New update is live. Check it out!
+                </p>
+
+                <button onClick={() => setShow(false)} className="absolute right-2 rounded px-2 py-1 text-white hover:bg-blue-600">
+                    ✕
+                </button>
+            </div>
+        </header>
+    )
+}

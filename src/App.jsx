@@ -1,15 +1,18 @@
 import './App.css'
+import Footer from './component/Footer'
+import Header from './component/Header'
+import Navbar from './component/Navbar'
 
 function App() {
 
   return (
     <>
-    <div className="min-h-screen bg-blue-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-6">Welcome to Product Zone</h2>
-        <p className="text-gray-700">This is a sample application using React and Tailwind CSS.</p>
-      </div>
-    </div>
+        <Header />
+        <Navbar />
+        <div className="min-h-screen bg-gray-100 flex flex-col">
+
+        </div>
+        <Footer />
     </>
   )
 }
