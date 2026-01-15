@@ -14,6 +14,7 @@ import ProductList from './component/products/ProductList'
 import ProductDetails from './component/products/ProductDetails'
 import ProductReviews from './component/products/ProductReviews'
 import ProductSpecs from './component/products/ProductSpecs'
+import Dashboard from './component/Dashboard'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
 
                 <Route path="/products/*" element={<ProductsLayout />} >
                     {/* Nested product routes */}
