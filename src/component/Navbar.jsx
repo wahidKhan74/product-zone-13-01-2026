@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const linkCass = ({ isActive }) =>
+        isActive
+            ? "text-blue-600 font-semibold"
+            : "text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200";
 
     return (
         //  < !--Navigation Bar-- >
@@ -18,12 +23,27 @@ export default function Navbar() {
 
                     {/* desktop menu  */}
                     <div className="hidden md:flex items-center space-x-6">
-                        <a href="#products" className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200">
+                        <NavLink to="/" className="{linkCass}">
+                            <i className="fas fa-home mr-1"></i>Home
+                        </NavLink>
+                         <NavLink to="/about" className="{linkCass}">
+                            <i className="fas fa-info-circle mr-1"></i>About
+                        </NavLink>
+                         <NavLink to="/contact" className="{linkCass}">
+                            <i className="fas fa-envelope mr-1"></i>Contact
+                        </NavLink>
+                        <NavLink to="/products" className="{linkCass}">
                             <i className="fas fa-boxes mr-1"></i>Products
-                        </a>
-                        <a href="#add-product" className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200">
+                        </NavLink>
+                        <NavLink to="/add-product" className="{linkCass}">
                             <i className="fas fa-plus mr-1"></i>Add Product
-                        </a>
+                        </NavLink>
+                        <NavLink to="/login" className="{linkCass}">
+                            <i className="fas fa-user mr-1"></i>Login
+                        </NavLink>
+                        <NavLink to="/register" className="{linkCass}">
+                            <i className="fas fa-user mr-1"></i>Register
+                        </NavLink>
                         <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                             <i className="fas fa-chart-line mr-1"></i>
                             <span id="productCount">0</span> Products
