@@ -6,10 +6,14 @@ import Navbar from './component/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Products from './component/Products'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import NotFound from './pages/error/NotFound'
+import ProductsLayout from './component/products/ProductLayout'
+import ProductList from './component/products/ProductList'
+import ProductDetails from './component/products/ProductDetails'
+import ProductReviews from './component/products/ProductReviews'
+import ProductSpecs from './component/products/ProductSpecs'
 
 function App() {
 
@@ -24,9 +28,18 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/products" element={<Products />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+
+                <Route path="/products/*" element={<ProductsLayout />} >
+                    {/* Nested product routes */}
+                    <Route index element={<ProductList />} />
+                    <Route path=":id" element={<ProductDetails />} >
+                      <Route path="reviews" element={<ProductReviews />} />
+                      <Route path="specs" element={<ProductSpecs />} />
+                    </Route>
+                </Route>
+
 
                 {/* call all catch  */}
                 <Route path="*" element={<NotFound />} />
