@@ -15,6 +15,8 @@ import ProductDetails from './component/products/ProductDetails'
 import ProductReviews from './component/products/ProductReviews'
 import ProductSpecs from './component/products/ProductSpecs'
 import Dashboard from './component/Dashboard'
+import AuthGuard from './component/auth/AuthGuard'
+import Profile from './component/Profile'
 
 function App() {
 
@@ -31,7 +33,19 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/dashboard" element={<Dashboard />} />
+
+                // Protected routes
+                <Route path="/dashboard" element={
+                  <AuthGuard>
+                      <Dashboard />
+                  </AuthGuard>
+                  } />
+
+                  <Route path="/profile" element={
+                  <AuthGuard>
+                      <Profile />
+                  </AuthGuard>
+                  } />
 
                 <Route path="/products/*" element={<ProductsLayout />} >
                     {/* Nested product routes */}

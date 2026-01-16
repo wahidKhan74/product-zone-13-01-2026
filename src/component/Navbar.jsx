@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "./auth/AuthContext";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { logout , isLoggedIn } = useAuth();
+
     const linkCass = ({ isActive }) =>
         isActive
             ? "text-blue-600 font-semibold"
@@ -26,6 +29,12 @@ export default function Navbar() {
                         <NavLink to="/" className="{linkCass}">
                             <i className="fas fa-home mr-1"></i>Home
                         </NavLink>
+                         <NavLink to="/dashboard" className="{linkCass}">
+                            <i className="fas fa-home mr-1"></i>Dashboard
+                        </NavLink>
+                         <NavLink to="/profile" className="{linkCass}">
+                            <i className="fas fa-user mr-1"></i>Profile
+                        </NavLink>
                          <NavLink to="/about" className="{linkCass}">
                             <i className="fas fa-info-circle mr-1"></i>About
                         </NavLink>
@@ -38,12 +47,23 @@ export default function Navbar() {
                         <NavLink to="/add-product" className="{linkCass}">
                             <i className="fas fa-plus mr-1"></i>Add Product
                         </NavLink>
-                        <NavLink to="/login" className="{linkCass}">
-                            <i className="fas fa-user mr-1"></i>Login
-                        </NavLink>
-                        <NavLink to="/register" className="{linkCass}">
-                            <i className="fas fa-user mr-1"></i>Register
-                        </NavLink>
+                        
+                        {!isLoggedIn && (
+                            <>
+                            <NavLink to="/login" className="{linkCass}">
+                                <i className="fas fa-user mr-1"></i>Login
+                            </NavLink>
+                            <NavLink to="/register" className="{linkCass}">
+                                <i className="fas fa-user mr-1"></i>Register
+                            </NavLink>
+                            </>
+                        )}
+
+                         {isLoggedIn && (
+                            <NavLink onClick={() => logout()} className="{linkCass}">
+                                <i className="fas fa-user mr-1"></i>Logout
+                            </NavLink>
+                         )}
                         <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                             <i className="fas fa-chart-line mr-1"></i>
                             <span id="productCount">0</span> Products

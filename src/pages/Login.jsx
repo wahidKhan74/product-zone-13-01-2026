@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../component/auth/AuthContext";
 
 export default function Login() {
 
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [error, setError] = useState("");
 
   const handleLogin = (e) => {
@@ -11,6 +13,7 @@ export default function Login() {
 
     // fake auth logic
     const isSuccess = true;
+    login();
 
     if (isSuccess) {
       localStorage.setItem("isLoggedIn", "true");
