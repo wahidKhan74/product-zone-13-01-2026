@@ -7,22 +7,25 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [role, setRole] = useState(null);
 
     // Function to log in a user
     const login = (userData) => {
         setUser(userData);
         setIsLoggedIn(true);
+        setRole(userData.role);
     };
 
     // Function to log out a user
     const logout = () => {
         setUser(null);
         setIsLoggedIn(false);
+        setRole(null);
     };
 
     // Provide the auth state and functions to children components
     return (
-        <AuthContext.Provider value={{ user, isLoggedIn, login, logout }}>
+        <AuthContext.Provider value={{ user, isLoggedIn, role, login, logout }}>
             {children}
         </AuthContext.Provider>
     );

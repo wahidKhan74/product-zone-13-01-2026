@@ -17,6 +17,9 @@ import ProductSpecs from './component/products/ProductSpecs'
 import Dashboard from './component/Dashboard'
 import AuthGuard from './component/auth/AuthGuard'
 import Profile from './component/Profile'
+import UnAuth from './pages/error/UnAuth'
+import RoleGuard from './component/auth/RoleGuard'
+import AdminDashboard from './component/AdminDashboard'
 
 function App() {
 
@@ -33,17 +36,30 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/unauthorized" element={<UnAuth />} />
 
                 // Protected routes
                 <Route path="/dashboard" element={
                   <AuthGuard>
-                      <Dashboard />
+                      <RoleGuard allowedRoles={['admin', 'user']}>
+                        <Dashboard />
+                      </RoleGuard>
+                  </AuthGuard>
+                  } />
+
+                  <Route path="/admin" element={
+                  <AuthGuard>
+                      <RoleGuard allowedRoles={['admin']}>
+                        <AdminDashboard />
+                      </RoleGuard>
                   </AuthGuard>
                   } />
 
                   <Route path="/profile" element={
                   <AuthGuard>
-                      <Profile />
+                      <RoleGuard allowedRoles={['user']}>
+                        <Profile />
+                      </RoleGuard>
                   </AuthGuard>
                   } />
 
