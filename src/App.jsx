@@ -20,6 +20,7 @@ import Profile from './component/Profile'
 import UnAuth from './pages/error/UnAuth'
 import RoleGuard from './component/auth/RoleGuard'
 import AdminDashboard from './component/AdminDashboard'
+import CartList from './component/cart/CartList'
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/unauthorized" element={<UnAuth />} />
-
+                <Route path="/cart" element={<CartList />} />
                 // Protected routes
                 <Route path="/dashboard" element={
                   <AuthGuard>
@@ -69,6 +70,7 @@ function App() {
                     <Route path=":id" element={<ProductDetails />} >
                       <Route path="reviews" element={<ProductReviews />} />
                       <Route path="specs" element={<ProductSpecs />} />
+                     
                     </Route>
                 </Route>
 

@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addItem } from "../../redux/cartReducer";
 
 const products = [
   { id: 101, name: "Laptop" },
@@ -7,6 +9,8 @@ const products = [
 ];
 
 export default function ProductList() {
+  const dispatch = useDispatch();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {products.map((p) => (
@@ -22,6 +26,10 @@ export default function ProductList() {
           >
             View Details →
           </Link>
+          <button onClick={() => dispatch(addItem(p))} 
+            className="mt-4 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>

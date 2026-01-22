@@ -3,12 +3,14 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import { useTheme } from "./context/ThemeContext";
 import { useLanguage } from "./context/LanguageContext";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { logout , isLoggedIn } = useAuth();
     const {theme, toggleTheme} = useTheme();
     const { language, changeLanguage, t } = useLanguage();
+    const items = useSelector((state) => state.cart.items);
 
     const linkCass = ({ isActive }) =>
         isActive
@@ -56,9 +58,6 @@ export default function Navbar() {
                         <NavLink to="/products" className="{linkCass}">
                             <i className="fas fa-boxes mr-1"></i>{t.products}
                         </NavLink>
-                        <NavLink to="/add-product" className="{linkCass}">
-                            <i className="fas fa-plus mr-1"></i>{t.addProduct}
-                        </NavLink>
                         
                         {!isLoggedIn && (
                             <>
@@ -78,7 +77,9 @@ export default function Navbar() {
                          )}
                         <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                             <i className="fas fa-chart-line mr-1"></i>
-                            <span id="productCount">0</span> {t.products}
+                            <NavLink to="/cart" className="{linkCass}">
+                                  <span id="productCount">{items.length}</span> {t.products}
+                            </NavLink>
                         </div>
 
                          <button onClick={toggleTheme}>

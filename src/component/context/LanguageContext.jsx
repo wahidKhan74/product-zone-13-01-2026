@@ -12,7 +12,7 @@ const transilations = {
     about: "About",
     contact: "Contact",
     products: "Products",
-    addProduct: "Add Product",
+    cart: "Cart",
   },
   es: {
     welcome: "Product Zone",
@@ -23,7 +23,7 @@ const transilations = {
     about: "Acerca de",
     contact: "Contacto",
     products: "Productos",
-    addProduct: "Agregar Producto",
+    cart: "Carrito",
   },
   hi : {
     welcome: "प्रोडक्ट ज़ोन",
@@ -34,7 +34,7 @@ const transilations = {
     about: "के बारे में",
     contact: "संपर्क करें",
     products: "उत्पाद",
-    addProduct: "उत्पाद जोड़ें",
+    cart: "कार्ट",
   }
 };
 
