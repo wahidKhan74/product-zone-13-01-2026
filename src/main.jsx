@@ -3,15 +3,21 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import { AuthProvider } from './component/auth/AuthContext.jsx'
+import { AuthProvider } from './component/context/AuthContext.jsx'
+import { ThemeProvider } from './component/context/ThemeContext.jsx'
+import { LanguageProvider } from './component/context/LanguageContext.jsx'
 
 createRoot(document.getElementById('root')).render(
 
   <StrictMode>
     <BrowserRouter>
+     <ThemeProvider>
+      <LanguageProvider>
       <AuthProvider>
         <App />
       </AuthProvider>
+      </LanguageProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )
