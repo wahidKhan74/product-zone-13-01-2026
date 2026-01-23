@@ -8,14 +8,6 @@ export default function ProductsLayout() {
 
       return (
         <div className="p-6 shadow mt-6 text-gray-800 bg-white rounded text-center">
-            <h1 className="text-2xl font-bold mb-4">Products</h1>
-            {/* product main navigation  */}
-            <nav className="flex gap-6 mb-6">
-                <NavLink to="/products" end className={tabClass}>
-                    All Products
-                </NavLink>
-            </nav>
-
             {/* chils routes render here (product list) */}
             <Outlet />
 

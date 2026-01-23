@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import cartReducer from "./cartReducer";
+import productReducer from "./productReducer";
 
 // 3. combine reducers for the store
 const rootReducer = combineReducers({
     cart: cartReducer,
-    user: (state = {}, action) => state, // placeholder for user reducer
-    emp : (state = [], action) => state, // placeholder for emp reducer
+    product: productReducer,
 });
 
 export default rootReducer;
