@@ -7,7 +7,7 @@ export default function ProductsLayout() {
       : "text-gray-600 hover:text-blue-500";
 
       return (
-        <div className="p-6 shadow mt-6 text-gray-800 bg-white rounded text-center">
+        <div className="p-6 shadow mt-6 text-gray-800 bg-white rounded">
             {/* chils routes render here (product list) */}
             <Outlet />
 

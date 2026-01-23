@@ -1,28 +1,124 @@
 {
     "products": [
         {
+            "id": "1",
             "name": "Premium Smartphone",
             "price": 799.99,
             "description": "Latest flagship smartphone with advanced camera system, 5G connectivity, and all-day battery life. Perfect for professionals and tech enthusiasts.",
-            "id": "1"
+            "category": "Electronics",
+            "subCategory": "Mobile Phones",
+             "discountPercentage": 10,
+            "discountedPrice": 719.99,
+            "currency": "USD",
+            "rating": 4.6,
+            "reviewCount": 1248,
+            "stock": 35,
+            "availabilityStatus": "In Stock",
+             "highlights": [
+                "6.7-inch AMOLED Display",
+                "108MP Triple Camera",
+                "5G Connectivity",
+                "5000mAh Battery",
+                "Fast Charging Support"
+            ],
+
+            "specifications": {
+                "processor": "Octa-core 3.2GHz",
+                "ram": "12GB",
+                "storage": "256GB",
+                "battery": "5000mAh",
+                "os": "Android 14",
+                "camera": "108MP + 12MP + 8MP",
+                "frontCamera": "32MP",
+                "display": "6.7-inch AMOLED",
+                "connectivity": ["5G", "WiFi 6", "Bluetooth 5.3", "NFC"]
+            }
         },
         {
             "id": "2",
             "name": "Gaming Laptop",
             "price": 1499.99,
-            "description": "High-performance gaming laptop with RTX graphics, fast SSD storage, and RGB keyboard. Ideal for gaming and content creation."
+            "description": "High-performance gaming laptop with RTX graphics, fast SSD storage, and RGB keyboard. Ideal for gaming and content creation.",
+            "category": "Electronics",
+            "subCategory": "Computers",
+            "discountPercentage": 15,
+            "discountedPrice": 1274.99,
+            "currency": "USD",
+            "rating": 4.8,
+            "reviewCount": 856,
+            "stock": 20,
+            "availabilityStatus": "In Stock",
+            "highlights": [
+                "15.6-inch FHD Display",
+                "NVIDIA RTX 3060",
+                "16GB RAM",
+                "1TB SSD Storage",
+                "RGB Backlit Keyboard"
+            ],
+            "specifications": {
+                "processor": "Intel Core i7-11800H",
+                "ram": "16GB",
+                "storage": "1TB SSD",
+                "graphics": "NVIDIA RTX 3060",
+                "os": "Windows 11",
+                "display": "15.6-inch FHD 144Hz",
+                "connectivity": ["WiFi 6", "Bluetooth 5.2", "USB-C", "HDMI"]
+            }
         },
         {
             "id": "3",
             "name": "Wireless Earbuds",
             "price": 199.99,
-            "description": "Premium wireless earbuds with noise cancellation, spatial audio, and quick charge case. Perfect for music lovers and commuters."
+            "description": "Premium wireless earbuds with noise cancellation, spatial audio, and quick charge case. Perfect for music lovers and commuters.",
+            "category": "Electronics",
+            "subCategory": "Audio",
+            "discountPercentage": 5,
+            "discountedPrice": 189.99,
+            "currency": "USD",
+            "rating": 4.7,
+            "reviewCount": 623,
+            "stock": 50,
+            "availabilityStatus": "In Stock",
+            "highlights": [
+                "Active Noise Cancellation",
+                "Spatial Audio",
+                "Quick Charge Case",
+                "12-hour Battery Life"
+            ],
+            "specifications": {
+                "batteryLife": "12 hours",
+                "chargingCase": ["Quick Charge", "USB-C"],
+                "connectivity": ["Bluetooth 5.2", "WiFi"],
+                "features": ["Noise Cancellation", "Spatial Audio"]
+            }
         },
         {
             "id": "4",
             "name": "Smart Watch",
             "price": 299.99,
-            "description": "Advanced fitness tracking, heart rate monitoring, GPS, and smartphone integration. Your perfect health and productivity companion."
+            "description": "Advanced fitness tracking, heart rate monitoring, GPS, and smartphone integration. Your perfect health and productivity companion.",
+            "category": "Electronics",
+            "subCategory": "Wearables",
+            "discountPercentage": 12,
+            "discountedPrice": 263.99,
+            "currency": "USD",
+            "rating": 4.5,
+            "reviewCount": 432,
+            "stock": 40,
+            "availabilityStatus": "In Stock",
+            "highlights": [
+                "Fitness Tracking",
+                "Heart Rate Monitor",
+                "Built-in GPS",
+                "Smartphone Notifications"
+            ],
+            "specifications": {
+                "display": "1.78-inch AMOLED",
+                "batteryLife": "18 hours",
+                "waterResistance": "50 meters",
+                "connectivity": ["Bluetooth 5.0", "WiFi"],
+                "features": ["Heart Rate Monitor", "GPS", "Sleep Tracking"]
+            }
         }
     ],
     "users": [

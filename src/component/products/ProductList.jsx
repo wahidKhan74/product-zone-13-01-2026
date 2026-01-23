@@ -38,7 +38,9 @@ export default function ProductList() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl">
-              <h4 className="text-lg font-bold text-gray-800 mb-2">{product.name}</h4>
+              <Link to={`/products/${product.id}`}>
+                <h4 className="text-lg font-bold text-gray-800 mb-2">{product.name}</h4>
+              </Link>
               <p className="text-sm text-gray-600 mb-2">{product.description}</p>
               <p className="text-blue-600 font-semibold mb-4">${product.price}</p>
               <div className="flex justify-between">
