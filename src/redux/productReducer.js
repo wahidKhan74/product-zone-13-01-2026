@@ -8,6 +8,7 @@ const productSlice = createSlice({
     initialState: {
         items: [],
         loading: false,
+        selectedProduct: null,
         error: null,
     },
     reducers: {
@@ -17,6 +18,7 @@ const productSlice = createSlice({
         },
         fetchProductsSuccess(state, action) {
             state.items = action.payload;
+            state.selectedProduct = action.payload;
             state.loading = false;
         },
         fetchProductsFailure(state, action) {
@@ -37,11 +39,35 @@ const productSlice = createSlice({
             state.error = action.payload;
         },
 
+        // create product
+        createProductSuccess(state, action) {
+            state.items.push(action.payload);
+        },
+        createProductFailure(state, action) {
+            state.error = action.payload;
+        },
+
+        // update product
+        updateProductSuccess(state, action) {
+            const index = state.items.findIndex(product => product.id === action.payload.id);
+            if (index !== -1) {
+                state.items[index] = action.payload;
+            }
+        },
+        updateProductFailure(state, action) {
+            state.error = action.payload;
+        },
+        clearSelectedProduct(state) {
+            state.selectedProduct = null;
+        },
+        // delete product
+
     },
 });
 
 export const { fetchProductsStart, fetchProductsSuccess, fetchProductsFailure ,
-    fetchProductByIdSuccess, fetchProductByIdFailure,
+    fetchProductByIdSuccess, fetchProductByIdFailure,createProductSuccess, createProductFailure,
+    updateProductSuccess, updateProductFailure, clearSelectedProduct
 } = productSlice.actions;
 
 // thunk to fetch products
@@ -63,6 +89,29 @@ export const fetchProductById = (id) => async (dispatch) => {
         dispatch(fetchProductByIdSuccess(product));
     } catch (error) {
         dispatch(fetchProductByIdFailure(error.toString()));
+    }
+};
+
+// thunk to create product
+export const createNewProduct = (productData) => async (dispatch) => {
+    try {
+        const newProduct = await createProduct(productData);
+        console.log('====================================');
+        console.log(newProduct);
+        console.log('====================================');
+        dispatch(createProductSuccess(newProduct));
+    } catch (error) {
+        dispatch(createProductFailure(error.toString()));
+    }
+};
+
+// thunk to update product
+export const updateExistingProduct = (id, productData) => async (dispatch) => {
+    try {
+        const updatedProduct = await updateProduct(id, productData);
+        dispatch(updateProductSuccess(updatedProduct));
+    } catch (error) {
+        dispatch(updateProductFailure(error.toString()));
     }
 };
 

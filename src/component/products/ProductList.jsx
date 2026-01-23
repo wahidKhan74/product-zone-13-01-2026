@@ -22,7 +22,7 @@ export default function ProductList() {
       </h3>
        <div className="flex justify-end mb-2">
         <button
-            onClick={() => navigate('/add-product')}
+            onClick={() => navigate('/products/create')}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md flex items-center gap-2"
           > <i className="fas fa-plus"></i>
             Add Product
@@ -44,7 +44,7 @@ export default function ProductList() {
               <p className="text-sm text-gray-600 mb-2">{product.description}</p>
               <p className="text-blue-600 font-semibold mb-4">${product.price}</p>
               <div className="flex justify-between">
-                <button onClick={() => navigate(`/edit-product/${product.id}`)} className="text-blue-500 hover:underline">
+                <button onClick={() => navigate(`/products/update/${product.id}`)} className="text-blue-500 hover:underline">
                   <i className="fas fa-edit mr-1"></i>Edit
                 </button>
                 <button onClick={() => dispatch(deleteProduct(product.id))} className="text-red-500 hover:underline">

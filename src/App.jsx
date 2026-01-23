@@ -21,6 +21,8 @@ import UnAuth from './pages/error/UnAuth'
 import RoleGuard from './component/auth/RoleGuard'
 import AdminDashboard from './component/AdminDashboard'
 import CartList from './component/cart/CartList'
+import CreateProduct from './component/products/CreateProduct'
+import UpdateProduct from './component/products/UpdateProduct'
 
 function App() {
 
@@ -67,6 +69,8 @@ function App() {
                 <Route path="/products/*" element={<ProductsLayout />} >
                     {/* Nested product routes */}
                     <Route index element={<ProductList />} />
+                    <Route path="create" element={<CreateProduct />} />
+                    <Route path="update/:id" element={<UpdateProduct />} />
                     <Route path=":id" element={<ProductDetails />} >
                       <Route path="reviews" element={<ProductReviews />} />
                       <Route path="specs" element={<ProductSpecs />} />
