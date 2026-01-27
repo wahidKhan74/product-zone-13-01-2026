@@ -1,7 +1,8 @@
 
 // create a slice for products
 import { createSlice } from '@reduxjs/toolkit';
-import { getProducts, getProductById, createProduct, updateProduct, deleteProduct } from '../api';
+import {  createProduct, updateProduct, deleteProduct } from '../api';
+import { getProducts, getProductById } from '../api/product';
 
 const productSlice = createSlice({
     name: 'products',
