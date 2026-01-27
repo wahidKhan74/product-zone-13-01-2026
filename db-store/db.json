@@ -160,15 +160,18 @@
   ],
   "carts": [
     {
-      "userId": "2",
       "items": [
         {
-          "productId": "1",
+          "productId": "2",
+          "quantity": 4
+        },
+        {
+          "productId": "4",
           "quantity": 1
         },
         {
-          "productId": "3",
-          "quantity": 2
+          "productId": "2774",
+          "quantity": 1
         }
       ],
       "id": "62ab"

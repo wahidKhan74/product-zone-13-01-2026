@@ -10,7 +10,8 @@ export default function Navbar() {
     const { logout , isLoggedIn } = useAuth();
     const {theme, toggleTheme} = useTheme();
     const { language, changeLanguage, t } = useLanguage();
-    const items = useSelector((state) => state.cart.items);
+    const cart = useSelector((state) => state.cart);
+
 
     const linkCass = ({ isActive }) =>
         isActive
@@ -75,12 +76,14 @@ export default function Navbar() {
                                 <i className="fas fa-user mr-1"></i>Logout
                             </NavLink>
                          )}
+                         { cart && cart.items && (
                         <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                             <i className="fas fa-chart-line mr-1"></i>
                             <NavLink to="/cart" className="{linkCass}">
-                                  <span id="productCount">{items.length}</span> {t.products}
+                                  <span id="productCount">{cart?.items?.length}</span> {t.products}
                             </NavLink>
                         </div>
+                         )}
 
                          <button onClick={toggleTheme}>
                             {theme === "light" ? "🌙 Dark" : "☀️ Light"}

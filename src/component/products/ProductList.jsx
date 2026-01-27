@@ -2,11 +2,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteExistingProduct, fetchProducts } from "../../redux/productReducer";
+import { addItemToCartThunk, updateCartItemQuantityThunk } from "../../redux/cartReducer";
 
 
 export default function ProductList() {
   // Redux hooks
   const dispatch = useDispatch();
+  // Get products and cart state from Redux store 
+  const cart = useSelector((state) => state.cart);
   const products = useSelector((state) => state.product.items);
   const navigate = useNavigate();
   // Fetch products action on load
@@ -14,6 +17,36 @@ export default function ProductList() {
     // Fetch products when component mounts
     dispatch(fetchProducts());
   }, [dispatch]);
+
+  const handleAddToCart = (product) => {
+      const existingItem = cart.items.find(
+        item => item.productId === product.id
+      );
+
+      let updatedItems;
+
+      if (existingItem) {
+        // increment quantity
+        updatedItems = cart.items.map(item =>
+          item.productId === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // add new item
+        updatedItems = [
+          ...cart.items,
+          { productId: product.id, quantity: 1 }
+        ];
+      }
+
+      dispatch(
+        updateCartItemQuantityThunk({
+          cartId: cart.id,
+          items: updatedItems
+        })
+      );
+    };
 
   return (
      <div className="mb-6">
@@ -51,6 +84,9 @@ export default function ProductList() {
                   <i className="fas fa-trash mr-1"></i>Delete
                 </button>
               </div>
+              <button onClick={() => handleAddToCart(product)} className="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                  <i className="fas fa-cart-plus mr-2"></i>Add to Cart
+                </button>
             </div>
           ))}
         </div>
