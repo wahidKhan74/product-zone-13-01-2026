@@ -60,14 +60,21 @@ const productSlice = createSlice({
         clearSelectedProduct(state) {
             state.selectedProduct = null;
         },
+
         // delete product
+        deleteProductSuccess(state, action) {
+            state.items = state.items.filter(product => product.id !== action.payload);
+        },
+        deleteProductFailure(state, action) {
+            state.error = action.payload;
+        }
 
     },
 });
 
 export const { fetchProductsStart, fetchProductsSuccess, fetchProductsFailure ,
     fetchProductByIdSuccess, fetchProductByIdFailure,createProductSuccess, createProductFailure,
-    updateProductSuccess, updateProductFailure, clearSelectedProduct
+    updateProductSuccess, updateProductFailure, clearSelectedProduct, deleteProductSuccess, deleteProductFailure
 } = productSlice.actions;
 
 // thunk to fetch products
@@ -112,6 +119,16 @@ export const updateExistingProduct = (id, productData) => async (dispatch) => {
         dispatch(updateProductSuccess(updatedProduct));
     } catch (error) {
         dispatch(updateProductFailure(error.toString()));
+    }
+};
+
+// thunk to delete product
+export const deleteExistingProduct = (id) => async (dispatch) => {
+    try {
+        await deleteProduct(id);
+        dispatch(deleteProductSuccess(id));
+    } catch (error) {
+        dispatch(deleteProductFailure(error.toString()));
     }
 };
 

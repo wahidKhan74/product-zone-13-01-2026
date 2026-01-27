@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { fetchProducts } from "../../redux/productReducer";
+import { deleteExistingProduct, fetchProducts } from "../../redux/productReducer";
 
 
 export default function ProductList() {
@@ -47,7 +47,7 @@ export default function ProductList() {
                 <button onClick={() => navigate(`/products/update/${product.id}`)} className="text-blue-500 hover:underline">
                   <i className="fas fa-edit mr-1"></i>Edit
                 </button>
-                <button onClick={() => dispatch(deleteProduct(product.id))} className="text-red-500 hover:underline">
+                <button onClick={() => dispatch(deleteExistingProduct(product.id))} className="text-red-500 hover:underline">
                   <i className="fas fa-trash mr-1"></i>Delete
                 </button>
               </div>

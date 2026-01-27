@@ -76,42 +76,6 @@
       "updatedAt": "2026-01-23T03:37:01.098Z"
     },
     {
-      "id": "3",
-      "name": "Wireless Earbuds",
-      "price": 199.99,
-      "description": "Premium wireless earbuds with noise cancellation, spatial audio, and quick charge case. Perfect for music lovers and commuters.",
-      "category": "Electronics",
-      "subCategory": "Audio",
-      "discountPercentage": 5,
-      "discountedPrice": 189.99,
-      "currency": "USD",
-      "rating": 4.7,
-      "reviewCount": 623,
-      "stock": 50,
-      "availabilityStatus": "In Stock",
-      "highlights": [
-        "Active Noise Cancellation",
-        "Spatial Audio",
-        "Quick Charge Case",
-        "12-hour Battery Life"
-      ],
-      "specifications": {
-        "batteryLife": "12 hours",
-        "chargingCase": [
-          "Quick Charge",
-          "USB-C"
-        ],
-        "connectivity": [
-          "Bluetooth 5.2",
-          "WiFi"
-        ],
-        "features": [
-          "Noise Cancellation",
-          "Spatial Audio"
-        ]
-      }
-    },
-    {
       "id": "4",
       "name": "Smart Watch",
       "price": 299.99,
