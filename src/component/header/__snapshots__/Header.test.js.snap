@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Header Component should match snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="bg-white shadow"
+  >
+    <div
+      class="relative flex items-center justify-center bg-blue-700 px-2 py-2 text-white"
+    >
+      <p
+        class="text-sm text-center"
+      >
+        New update is live. Check it out! Your online store for everything
+      </p>
+      <button
+        class="absolute right-2 rounded px-2 py-1 text-white hover:bg-blue-600"
+      >
+        ✕
+      </button>
+    </div>
+  </header>
+</DocumentFragment>
+`;
