@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { deleteExistingProduct, fetchProducts } from "../../redux/productReducer";
-import { addItemToCartThunk, updateCartItemQuantityThunk } from "../../redux/cartReducer";
+import { deleteExistingProduct, fetchProducts } from "../../../redux/productReducer";
+import { addItemToCartThunk, updateCartItemQuantityThunk } from "../../../redux/cartReducer";
 
 
 export default function ProductList() {

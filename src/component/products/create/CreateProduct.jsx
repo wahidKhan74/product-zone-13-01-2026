@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createNewProduct } from "../../redux/productReducer";
+import { createNewProduct } from "../../../redux/productReducer";
 import { useDispatch } from "react-redux";
 
 // product creation related constants and component
@@ -123,9 +123,10 @@ export default function CreateProduct() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-1">Brand</label>
+                            <label  htmlFor="brand" className="block text-sm font-medium mb-1">Brand</label>
                             <select
                                 name="brand"
+                                id="brand"
                                 className={inputClass}
                                 onChange={handleChange}
                                 required
@@ -138,9 +139,10 @@ export default function CreateProduct() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-1">Category</label>
+                            <label  htmlFor="category"  className="block text-sm font-medium mb-1">Category</label>
                             <select
                                 name="category"
+                                id="category"
                                 className={inputClass}
                                 onChange={handleChange}
                                 required
@@ -153,9 +155,10 @@ export default function CreateProduct() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-1">Sub Category</label>
+                            <label htmlFor="subCategory" className="block text-sm font-medium mb-1">Sub Category</label>
                             <select
                                 name="subCategory"
+                                id="subCategory"
                                 className={inputClass}
                                 disabled={!product.category}
                                 onChange={handleChange}
