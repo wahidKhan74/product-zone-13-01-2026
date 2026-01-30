@@ -1,0 +1,101 @@
+{
+    "employees": [
+        {
+               "employeeId": "EMP-2025-000123",
+               "firstName": "Samual",
+                "lastName": "david",
+                "gender": "MALE",
+                "dateOfBirth": "1993-07-15",
+                "maritalStatus": "MARRIED",
+                "nationality": "Indian",
+                "contactDetails": {
+                "personalEmail": "Samual.david@gmail.com",
+                "mobileNumber": "+974-55567890",
+                "emergencyContact": {
+                        "name": "Naina david",
+                        "relationship": "Spouse",
+                        "phone": "+91-9876543210"
+                    }
+                },
+                "employeeType": "FULL_TIME",
+                "employmentStatus": "ACTIVE",
+                "joiningDate": "2025-02-10",
+                "probationPeriodMonths": 6,
+                "confirmationDate": "2025-08-10",
+                "department": "Engineering",
+                "designation": "Senior Software Engineer",
+                "jobLevel": "L3",
+                "reportingManager": {
+                    "managerId": "EMP-2020-000045",
+                    "name": "Rahul Mehta",
+                    "email": "rahul.mehta@company.com"
+                },
+                "workLocation": {
+                    "office": "Doha",
+                    "country": "Qatar",
+                    "workMode": "HYBRID"
+                }
+
+        }
+    ],
+    "departments": [
+        { "id": 1, "name": "Engineering" },
+        { "id": 2, "name": "Human Resources" },
+        { "id": 3, "name": "Finance" }
+    ],
+
+  "designations": [
+        { "id": 1, "title": "Software Engineer", "level": "L2" },
+        { "id": 2, "title": "Senior Software Engineer", "level": "L3" },
+        { "id": 3, "title": "Technical Architect", "level": "L5" }
+    ],
+
+  "workLocations": [
+    {
+      "id": 1,
+      "office": "Doha",
+      "country": "Qatar",
+      "workMode": "HYBRID"
+    }
+  ],
+  "payroll": [
+    {
+    "id": 1,
+     "employeeId": "EMP-2025-000123",
+      "bankName": "ABC National Bank",
+      "accountNumber": "XXXXXX7890",
+      "currency": "USD",
+      "basicSalary": 18000,
+      "housingAllowance": 5000,
+      "transportAllowance": 2000,
+      "otherAllowance": 1000,
+      "grossSalary": 26000,
+      "paymentFrequency": "MONTHLY"
+    }
+  ],
+  "leaveRequests": [
+  {
+    "id": 1,
+    "employeeId": "EMP-2025-000123",
+    "leaveTypeId": 1,
+    "fromDate": "2025-03-10",
+    "toDate": "2025-03-12",
+    "numberOfDays": 3,
+    "reason": "Family function",
+    "status": "PENDING",
+    "appliedAt": "2025-03-01T09:30:00Z"
+  },
+  {
+    "id": 2,
+   "employeeId": "EMP-2025-000126",
+    "leaveTypeId": 2,
+    "fromDate": "2025-01-20",
+    "toDate": "2025-01-20",
+    "numberOfDays": 1,
+    "reason": "Fever",
+    "status": "APPROVED",
+    "appliedAt": "2025-01-19T08:00:00Z"
+  }
+]
+
+}
